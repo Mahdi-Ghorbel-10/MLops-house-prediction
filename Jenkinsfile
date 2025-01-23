@@ -7,13 +7,15 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], credentialsId: 'GitHub', url: 'https://github.com/Mahdi-Ghorbel-10/MLops-house-prediction.git']) 
             }        }
 
-        stage('Build') {
-            steps {
-                source'python3 -m venv .venv'
-                source'source .venv/bin/activate && pip install -r requirements.txt'
-                soure 'docker build -t ghorbelmahdi/house-price-api .' 
+     stage('Build') {
+    steps {
+        sh '''#!/bin/bash
+            python3 -m venv .venv
+            source .venv/bin/activate && pip install -r requirements.txt && docker build -t ghorbelmahdi/house-price-api .
+        '''
+                }
             }
-        }
+
 
         //stage('Push to Docker Hub') {
           //  steps {
