@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'python3 -m venv .venv'
                 sh 'source .venv/bin/activate && pip install -r requirements.txt'
-                sh 'docker build -t your-dockerhub-username/house-price-api .' 
+                sh 'docker build -t ghorbelmahdi/house-price-api .' 
             }
         }
 
