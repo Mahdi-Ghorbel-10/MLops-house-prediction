@@ -9,9 +9,9 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'python3 -m venv .venv'
-                sh 'source .venv/bin/activate && pip install -r requirements.txt'
-                sh 'docker build -t ghorbelmahdi/house-price-api .' 
+                source'python3 -m venv .venv'
+                source'source .venv/bin/activate && pip install -r requirements.txt'
+                soure 'docker build -t ghorbelmahdi/house-price-api .' 
             }
         }
 
