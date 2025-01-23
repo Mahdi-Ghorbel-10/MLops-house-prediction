@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
  steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], credentialsId: 'Mahdi-Ghorbel-10', url: 'https://github.com/Mahdi-Ghorbel-10/MLops-house-prediction.git']) 
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], credentialsId: 'GitHub', url: 'https://github.com/Mahdi-Ghorbel-10/MLops-house-prediction.git']) 
             }        }
 
         stage('Build') {
