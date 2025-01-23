@@ -3,10 +3,9 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'your-github-credentials-id', url: 'your-private-repository-url']]])
-            }
-        }
+ steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], credentialsId: 'Mahdi-Ghorbel-10', url: 'git@github.com:Mahdi-Ghorbel-10/MLops-house-prediction.git']) 
+            }        }
 
         stage('Build') {
             steps {
